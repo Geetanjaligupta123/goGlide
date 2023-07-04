@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/styleForm.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="center">
+             <h1 class="heading">Driver Form</h1>  
+             
+             <div class="formContent">
+             <form action={% url 'signin' %} method="POST">
+                {% csrf_token %}
+                <label for="uname">Username</label>
+                <input type="text" class="uname" name="uname" required>
+                <label for="pass">Password</label>
+                <input type="password" class="pass"  name="pass" required>
+
+                <div class="link">
+                <button class="submit">Login</button>
+                <p class="para">Don't have an account<a href="midConfirm">Signup</a></p>
+                </div>
+            
+             </form>
+            </div>
+
+        </div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
